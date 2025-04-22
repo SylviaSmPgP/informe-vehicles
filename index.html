@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Informe de Vehicles</title>
+    <style>
+      table { border-collapse: collapse; width: 100%; margin-top: 1em; }
+      th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+      th { background-color: #f2f2f2; }
+      .verd { background-color: #d4edda; }
+    </style>
+    <script>
+      function aplicarFiltres() {
+        const tipusFiltre = document.getElementById("tipusSelect").value;
+        const files = document.querySelectorAll("table tbody tr");
+        files.forEach(row => {
+          const tipus = row.getAttribute("data-tipus");
+          row.style.display = (tipusFiltre === "Tots" || tipus === tipusFiltre) ? "" : "none";
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Vehicles</h1>
+
+    <label for="tipusSelect">Filtrar per tipus:</label>
+    <select id="tipusSelect" onchange="aplicarFiltres()">
+      <option value="Tots">Tots</option>
+      <option value="Elèctric">Elèctric</option>
+      <option value="SUV">SUV</option>
+      <option value="Sedan">Sedan</option>
+    </select>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Marca</th>
+          <th>Model</th>
+          <th>Any</th>
+          <th>Tipus</th>
+          <th>Preu (€)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-tipus="Elèctric" class="verd"><td>Tesla</td><td>Model S</td><td>2022</td><td>Elèctric</td><td>85000</td></tr>
+        <tr data-tipus="Elèctric" class="verd"><td>Mercedes</td><td>EQC</td><td>2023</td><td>Elèctric</td><td>72000</td></tr>
+        <tr data-tipus="Elèctric" class="verd"><td>BMW</td><td>iX</td><td>2023</td><td>Elèctric</td><td>90000</td></tr>
+        <tr data-tipus="Elèctric" class="verd"><td>Audi</td><td>Q4 e-tron</td><td>2022</td><td>Elèctric</td><td>55000</td></tr>
+        <tr data-tipus="Elèctric" class="verd"><td>Hyundai</td><td>Kona Electric</td><td>2022</td><td>Elèctric</td><td>42000</td></tr>
+        <tr data-tipus="Elèctric"><td>Nissan</td><td>Leaf</td><td>2021</td><td>Elèctric</td><td>32000</td></tr>
+        <tr data-tipus="SUV"><td>Toyota</td><td>RAV4</td><td>2021</td><td>SUV</td><td>35000</td></tr>
+        <tr data-tipus="SUV"><td>Kia</td><td>Sportage</td><td>2021</td><td>SUV</td><td>34000</td></tr>
+        <tr data-tipus="SUV"><td>Volvo</td><td>XC40</td><td>2022</td><td>SUV</td><td>40000</td></tr>
+        <tr data-tipus="Sedan"><td>Ford</td><td>Focus</td><td>2020</td><td>Sedan</td><td>23000</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Resum vehicles elèctrics</h2>
+    <p>Total de vehicles elèctrics: 6</p>
+    <p>Preu mitjà dels vehicles elèctrics: 62.666,67 €</p>
+  </body>
+</html>
