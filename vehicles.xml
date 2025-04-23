@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="vehicles-filtrable-any.xsl"?>
+<?xml-stylesheet type="text/xsl" href="informe_vehicles.xsl"?>
 <concessionari>
   <vehicle id="V001">
     <marca>Tesla</marca>
@@ -10,7 +10,7 @@
     <autonomia>600</autonomia>
     <potencia>670</potencia>
     <consum>ECO</consum>
-    <features>Autopilot, Pantalla tàctil 17"</features>
+    <features>Autopilot, Pantalla tàctil 17&quot;</features>
   </vehicle>
   <vehicle id="V002">
     <marca>Toyota</marca>
